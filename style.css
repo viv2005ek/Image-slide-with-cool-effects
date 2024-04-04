@@ -1,0 +1,411 @@
+*{
+  padding:0;
+  margin:0;
+}
+
+.forLoaderBody{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.containerLoader {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+z-index: 100;
+  position: fixed;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.container p{
+  color:white;
+  font-size:40px;
+  font-weight:bold;
+  font-family:sans-serif;
+}
+.dot{
+  width:10px;
+  height:10px;
+  background-color:white;
+  border-radius: 10px;
+  animation: load 1s alternate infinite;
+}
+.dot:nth-child(1){
+  animation-delay: 0;
+}
+.dot:nth-child(2){
+  animation-delay: 0.25s;
+}
+
+.dot:nth-child(3){
+  animation-delay: 0.5s;
+}
+.dot:nth-child(4){
+  animation-delay: 0.75s;
+}
+.dot:nth-child(5){
+   animation-delay: 1s; /* it should be equal to animation time */
+}
+
+@keyframes load{
+  from{
+    height:10px;
+  }
+  to{
+      height:40px;
+    }
+  }
+
+
+body {
+  position: absolute;
+  background-color: #0b1522; 
+  color: white;
+  overflow-x:hidden;
+}
+
+svg{
+  position:relative;
+  top:;
+  z-index:-1;
+  width:100vw;
+}
+header{
+  width:100vw;
+  position:absolute;
+  top:5vw;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+}
+
+
+
+.container {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, auto)); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  margin: 20px;
+}
+
+.outerDiv {
+  width: 28%;
+  min-width: 300px;
+}
+
+.outerDiv:not(h1) {
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  position: relative;
+  transition: all .5s ease;
+}
+
+.card>img {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: sticky;
+  Left: 0;
+  scroll-snap-align: center;
+}
+
+
+.cardAuto {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  transition: all .5s ease;
+
+}
+
+.cardAuto>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  45% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-200%);
+  }
+
+  70% {
+    transform: translateX(-200%);
+  }
+
+  75% {
+    transform: translateX(-300%);
+  }
+
+  95% {
+    transform: translateX(-300%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.cardAuto img {
+  animation: slide 20s infinite;
+}
+
+
+.cardClick {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all .5s ease;
+
+}
+
+.cardClick>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: sticky;
+  Left: 0;
+}
+
+h1::selection {
+  background-color: white;
+  color: #0b1522;
+}
+
+img::selection {
+  background-color: transparent;
+}
+
+.cardAutoMask {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  transition: all .5s ease;
+
+}
+
+.cardAutoMask>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  -webkit-mask-image: url("mask.png");
+  mask-image: url("mask.png");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.cardAutoMask img {
+  animation: slide 20s infinite;
+}
+
+.cardClickMask {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all .5s ease;
+
+
+}
+
+.cardClickMask>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: sticky;
+  Left: 0;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 90%);
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+
+.mix {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  position: relative;
+  background: url("codeB.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .5s ease;
+}
+
+.mix img {
+  width: 100%;
+  height: 260px;
+  mix-blend-mode: multiply;
+}
+
+.outerDiv:hover :first-child {
+  box-shadow: 0 0 50px 15px cyan;
+}
+
+
+.gparent {
+  width: 28%;
+  min-width: 300px;
+  height: 260px;
+
+}
+
+.gparent :first-child {
+  cursor: pointer;
+}
+
+.parent {
+  width: 100%;
+  min-width: 300px;
+  height: 260px;
+
+  position: relative;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: all .3s ease;
+
+}
+
+.child {
+
+  position: absolute;
+  /* height:100%;
+  width:100%; */
+  inset: 0;
+  background-image: url("touchme.avif");
+  background-size: cover;
+  transition: all .3s ease;
+  border-radius: 10px;
+
+}
+
+.parent:hover {
+  background: linear-gradient(180deg, orange, red, pink);
+  box-shadow: 0 0 100px cyan;
+  border-color: transparent;
+}
+
+.parent:hover .child {
+  inset: 7px;
+  border-radius: 15px;
+
+}
+
+.parent2 {
+  width: 100%;
+  min-width: 300px;
+  height: 260px;
+
+  position: relative;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: all .3s ease;
+}
+
+.parent2:hover {
+  background: linear-gradient(180deg, orange, red, pink);
+  box-shadow: 0 0 100px  cyan;
+  border-color: transparent;
+  scale: 1.1;
+}
+
+.child2 {
+
+  position: absolute;
+  /* height:100%;
+  width:100%; */
+  inset: 0;
+  background-image: url("touvh2.jpg");
+  background-size: cover;
+  transition: all .3s ease;
+  border-radius: 10px;
+
+}
+
+.parent2:hover .child2 {
+  inset: 7px;
+  border-radius: 15px;
+
+}
+
+
+.cardAutoByJS {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  border: 4px solid white;
+  border-radius: 10px;
+  overflow-x: hidden;
+  position: relative;
+  transition: all .5s ease;
+}
+
+.cardAutoByJS>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
